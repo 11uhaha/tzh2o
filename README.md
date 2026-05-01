@@ -1,5 +1,5 @@
 ## Запуск
-\`\`\`bash
+\`\`\`
 mvn spring-boot:run
 \`\`\`
 http://localhost:8080
@@ -12,7 +12,7 @@ http://localhost:8080
 - GET /api/products/{id} - просмотр по ID
 
 ## Запуск тестов
-\`\`\`bash
+\`\`\`
 mvn test
 \`\`\`
 
