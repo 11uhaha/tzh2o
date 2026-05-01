@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+</head>
+<body>
+
+<h1>Магазин компьютеров</h1>
+
+<div th:if="${error}" style="color:red" th:text="${error}"></div>
+<div th:if="${message}" style="color:green" th:text="${message}"></div>
+
+<h2>Добавить товар</h2>
+
+<form method="post" action="/add-desktop">
+    <h3>Настольный компьютер</h3>
+    Серийный номер: <input name="serialNumber"><br>
+    Производитель: <input name="manufacturer"><br>
+    Цена: <input name="price"><br>
+    Количество: <input name="stockQuantity"><br>
+    Форм-фактор:
+    <select name="formFactor">
+        <option>DESKTOP</option>
+        <option>NETTOP</option>
+        <option>MONOBLOCK</option>
+    </select><br>
+    <button>Добавить</button>
+</form>
+
+<form method="post" action="/add-laptop">
+    <h3>Ноутбук</h3>
+    Серийный номер: <input name="serialNumber"><br>
+    Производитель: <input name="manufacturer"><br>
+    Цена: <input name="price"><br>
+    Количество: <input name="stockQuantity"><br>
+    Размер:
+    <select name="size">
+        <option>INCH_13</option>
+        <option>INCH_14</option>
+        <option>INCH_15</option>
+        <option>INCH_17</option>
+    </select><br>
+    <button>Добавить</button>
+</form>
+
+<form method="post" action="/add-monitor">
+    <h3>Монитор</h3>
+    Серийный номер: <input name="serialNumber"><br>
+    Производитель: <input name="manufacturer"><br>
+    Цена: <input name="price"><br>
+    Количество: <input name="stockQuantity"><br>
+    Диагональ: <input name="diagonal"><br>
+    <button>Добавить</button>
+</form>
+
+<form method="post" action="/add-harddrive">
+    <h3>Жесткий диск</h3>
+    Серийный номер: <input name="serialNumber"><br>
+    Производитель: <input name="manufacturer"><br>
+    Цена: <input name="price"><br>
+    Количество: <input name="stockQuantity"><br>
+    Объем ГБ: <input name="capacity"><br>
+    <button>Добавить</button>
+</form>
+
+<hr>
+
+<h2>Просмотр товаров</h2>
+
+<a href="/view/DESKTOP">Настольные компьютеры</a><br>
+<a href="/view/LAPTOP">Ноутбуки</a><br>
+<a href="/view/MONITOR">Мониторы</a><br>
+<a href="/view/HARD_DRIVE">Жесткие диски</a><br>
+
+<hr>
+
+<h2>Найти по ID</h2>
+<form method="get" action="/view-id">
+    ID: <input name="id">
+    <button>Найти</button>
+</form>
+
+</body>
+</html>

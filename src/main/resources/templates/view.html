@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр</title>
+</head>
+<body>
+
+<div th:if="${error}" style="color:red" th:text="${error}"></div>
+
+<h2>Товары типа: <span th:text="${type}"></span></h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Серийный номер</th>
+        <th>Производитель</th>
+        <th>Цена</th>
+        <th>Количество</th>
+        <th>Характеристика</th>
+    </tr>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.id}">1</td>
+        <td th:text="${p.serialNumber}">SN</td>
+        <td th:text="${p.manufacturer}">M</td>
+        <td th:text="${p.price}">0</td>
+        <td th:text="${p.stockQuantity}">0</td>
+        <td>
+            <span th:if="${p.formFactor}" th:text="${p.formFactor}"></span>
+            <span th:if="${p.laptopSize}" th:text="${p.laptopSize}"></span>
+            <span th:if="${p.diagonal}" th:text="${p.diagonal} + 'дюймов'"></span>
+            <span th:if="${p.capacity}" th:text="${p.capacity} + 'ГБ'"></span>
+        </td>
+    </tr>
+</table>
+
+<a href="/">Назад</a>
+
+</body>
+</html>
